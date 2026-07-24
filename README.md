@@ -625,3 +625,268 @@ This is the mental model you should keep throughout the rest of the AI Foundatio
 Every future repository expands one block of this pipeline until you understand exactly how modern Large Language Models work internally.
 
 ---
+
+# 📒 Repository Curriculum
+
+This repository is organized into a series of notebooks. Each notebook focuses on one concept and builds upon the previous one, allowing you to learn progressively.
+
+| Notebook | Topic | What You'll Learn |
+|-----------|-------|-------------------|
+| 01 | Getting Started | Install the libraries, understand the Hugging Face ecosystem, and run your first model |
+| 02 | Model Hub | Explore pretrained models, datasets, Spaces, and model discovery |
+| 03 | Tokenizers | Learn tokenization, vocabularies, token IDs, attention masks, padding, and truncation |
+| 04 | Models | Understand encoder, decoder, encoder-decoder architectures and Auto Classes |
+| 05 | Pipeline API | Perform text generation, sentiment analysis, translation, summarization, and more |
+| 06 | Text Generation | Explore `generate()`, temperature, top-k, top-p, beam search, and decoding strategies |
+| 07 | Final Project | Build a simple AI assistant powered by Hugging Face |
+
+---
+
+# 🛠 Mini Project
+
+At the end of this repository you'll build your first AI application.
+
+### Project
+
+```
+Simple AI Assistant
+```
+
+### Application Flow
+
+```text
+                 User
+
+                  │
+
+                  ▼
+
+          Enter Prompt
+
+                  │
+
+                  ▼
+
+            Tokenizer
+
+                  │
+
+                  ▼
+
+           GPT-2 Transformer
+
+                  │
+
+                  ▼
+
+            Generated Text
+
+                  │
+
+                  ▼
+
+            Display Response
+```
+
+Although simple, this project introduces the same workflow used in larger AI applications.
+
+---
+
+# 🏆 Skills You'll Gain
+
+After completing Repository #01 you'll be able to:
+
+### AI Fundamentals
+
+- Explain the Hugging Face ecosystem
+- Understand pretrained models
+- Explain tokenization
+- Understand token IDs
+- Explain attention masks
+
+### Development Skills
+
+- Load models from Hugging Face
+- Load tokenizers
+- Generate text using GPT-2
+- Use pipelines
+- Explore different Transformer models
+- Build a basic AI application
+
+### Career Skills
+
+You'll also be prepared to confidently answer interview questions such as:
+
+- What is Hugging Face?
+- Why are tokenizers needed?
+- What is an attention mask?
+- What is the difference between GPT-2 and BERT?
+- What is `AutoTokenizer`?
+- What is `pipeline()`?
+- What happens inside `generate()`?
+
+---
+
+# ⚠️ Common Beginner Mistakes
+
+When starting with Hugging Face, many learners encounter similar issues.
+
+### Forgetting `return_tensors="pt"`
+
+Without this argument, the tokenizer returns Python lists instead of PyTorch tensors.
+
+---
+
+### Mixing tokenizer and model
+
+Always load the tokenizer that matches your model.
+
+✅ Correct
+
+```python
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2")
+```
+
+---
+
+### Ignoring the attention mask
+
+Padding tokens should not influence the model's attention. Always provide the attention mask when batching variable-length inputs.
+
+---
+
+### Expecting deterministic output
+
+Text generation is probabilistic. Parameters such as temperature, top-k, and top-p influence the generated output.
+
+---
+
+# 💡 Best Practices
+
+- Start with smaller models (GPT-2, DistilBERT, FLAN-T5 Small) to understand concepts.
+- Use Google Colab with GPU for faster experimentation.
+- Read model cards before using a model.
+- Inspect tokenizer outputs before debugging model behavior.
+- Keep notebooks small and focused on one concept.
+- Experiment with generation parameters to understand their effects.
+
+---
+
+# 📚 Additional Resources
+
+## Official Documentation
+
+- Hugging Face Transformers Documentation
+- Hugging Face Course
+- Hugging Face Model Hub
+- Hugging Face Datasets Documentation
+
+## Research Papers
+
+- Attention Is All You Need (2017)
+- BERT: Pre-training of Deep Bidirectional Transformers
+- Language Models are Unsupervised Multitask Learners (GPT-2)
+- Exploring the Limits of Transfer Learning with T5
+
+## Recommended Books
+
+- Natural Language Processing with Transformers
+- Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow
+
+---
+
+# 🚀 What's Next?
+
+Congratulations! 🎉
+
+You now understand the tools used to work with modern Transformer models.
+
+However, we have intentionally treated the model itself as a **black box**.
+
+In the next repository, we'll open that box.
+
+## Repository #02 — LLM Generation Pipeline
+
+You'll learn what happens **inside** a language model after tokenization.
+
+Topics include:
+
+- Embeddings
+- Positional Encoding
+- Transformer Layers
+- Hidden States
+- Logits
+- Softmax
+- Sampling
+- Next Token Prediction
+- Text Generation Pipeline
+
+By the end of Repository #02, you'll understand the complete inference pipeline used by modern LLMs.
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you find an issue, have suggestions for improvement, or want to add additional examples, feel free to open an issue or submit a pull request.
+
+Please ensure that contributions:
+
+- Follow the repository style
+- Include clear explanations
+- Keep examples beginner-friendly
+- Maintain code readability
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+See the `LICENSE` file for more details.
+
+---
+
+# 🙏 Acknowledgements
+
+This repository was inspired by the incredible work of the open-source AI community.
+
+Special thanks to:
+
+- The Hugging Face team
+- PyTorch contributors
+- Google Research
+- OpenAI
+- The broader machine learning community
+
+Their work has made modern AI more accessible to developers around the world.
+
+---
+
+# ⭐ Support the Project
+
+If this repository helped you learn something new:
+
+- ⭐ Star the repository
+- 🍴 Fork it
+- 🛠 Share it with others
+- 💬 Open discussions or issues
+- 📢 Contribute improvements
+
+Your support helps make high-quality AI education freely available to everyone.
+
+---
+
+<div align="center">
+
+### 🎓 AI Foundations Series
+
+**Repository #01 Complete ✅**
+
+**Next → AI Foundations #02: LLM Generation Pipeline**
+
+Happy Learning! 🚀
+
+</div>
